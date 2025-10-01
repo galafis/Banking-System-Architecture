@@ -120,3 +120,10 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo `LICENSE` para 
 **Gabriel Demetrios Lafis**
 
 Este projeto é uma demonstração de arquitetura de software e não deve ser utilizado em produção sem as devidas adaptações e validações de segurança e conformidade.
+
+
+## Fluxo de Transação
+
+![Fluxo de Transação](docs/architecture_diagram_rendered.png)
+*Diagrama ilustrativo do fluxo de uma transação bancária no sistema.*
+

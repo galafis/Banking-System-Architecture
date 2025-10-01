@@ -120,3 +120,10 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 **Gabriel Demetrios Lafis**
 
 This project is a demonstration of software architecture and should not be used in production without proper adaptations and security and compliance validations.
+
+
+## Transaction Flow
+
+![Transaction Flow](docs/architecture_diagram_rendered.png)
+*Illustrative diagram of the banking system's transaction flow.*
+
