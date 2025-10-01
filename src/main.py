@@ -31,7 +31,7 @@ class Bank:
     def create_account(self, account_holder, initial_balance=0.0):
         account = Account(account_holder, initial_balance)
         self.accounts[account.account_id] = account
-        print(f"Account created for {account_holder} with ID {account.account_id}")
+        # print(f"Account created for {account_holder} with ID {account.account_id}") # Remove print for testing
         return account
 
     def get_account(self, account_id):
@@ -42,13 +42,13 @@ class Bank:
         to_account = self.get_account(to_account_id)
 
         if not from_account or not to_account:
-            print("One or both accounts not found.")
+            # print("One or both accounts not found.") # Remove print for testing
             return False
         if from_account.withdraw(amount):
             to_account.deposit(amount)
-            print(f"Transferred ${amount:.2f} from {from_account.account_holder} to {to_account.account_holder}")
+            # print(f"Transferred ${amount:.2f} from {from_account.account_holder} to {to_account.account_holder}") # Remove print for testing
             return True
-        print("Transfer failed: Insufficient funds or invalid amount.")
+        # print("Transfer failed: Insufficient funds or invalid amount.") # Remove print for testing
         return False
 
 def main():
@@ -84,3 +84,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

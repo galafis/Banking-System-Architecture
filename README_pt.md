@@ -3,6 +3,7 @@
 ![Status do Build](https://img.shields.io/badge/build-passing-brightgreen)
 ![Licença](https://img.shields.io/badge/license-MIT-blue)
 ![Linguagem Principal](https://img.shields.io/github/languages/top/galafis/Banking-System-Architecture?color=blue)
+![Python Version](https://img.shields.io/badge/python-3.x-blue)
 ![Estrelas](https://img.shields.io/github/stars/galafis/Banking-System-Architecture?style=social)
 
 ## Visão Geral
@@ -63,7 +64,7 @@ Certifique-se de ter as seguintes ferramentas instaladas em seu ambiente:
     ```
 2.  Instale as dependências do backend (se houver um `requirements.txt`):
     ```bash
-    pip install -r requirements.txt
+    pip install -r config/requirements.txt
     ```
 3.  Instale as dependências do frontend (se houver um `package.json`):
     ```bash
@@ -99,6 +100,16 @@ docker-compose up --build
 ![Diagrama de Arquitetura](docs/architecture_diagram.png)
 *Diagrama ilustrativo da arquitetura de microserviços e seus componentes principais.*
 
+## Fluxo de Transação
+
+![Fluxo de Transação](docs/architecture_diagram_rendered.png)
+*Diagrama ilustrativo do fluxo de uma transação bancária no sistema.*
+
+## Diagrama de Classes
+
+![Diagrama de Classes](docs/architecture_diagram.png)
+*Diagrama de classes do sistema bancário, mostrando as relações entre as entidades Account e Bank.*
+
 ## Roadmap Futuro
 
 *   Implementação de um módulo de empréstimos e financiamentos.
@@ -120,10 +131,4 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo `LICENSE` para 
 **Gabriel Demetrios Lafis**
 
 Este projeto é uma demonstração de arquitetura de software e não deve ser utilizado em produção sem as devidas adaptações e validações de segurança e conformidade.
-
-
-## Fluxo de Transação
-
-![Fluxo de Transação](docs/architecture_diagram_rendered.png)
-*Diagrama ilustrativo do fluxo de uma transação bancária no sistema.*
 

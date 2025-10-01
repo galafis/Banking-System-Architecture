@@ -39,3 +39,25 @@ sequenceDiagram
     Frontend-->>Cliente: Exibe Confirmação
 ```
 
+
+
+```mermaid
+classDiagram
+    class Account {
+        +String account_id
+        +String account_holder
+        +Float balance
+        +deposit(amount)
+        +withdraw(amount)
+        +get_balance()
+    }
+
+    class Bank {
+        -Map accounts
+        +create_account(account_holder, initial_balance)
+        +get_account(account_id)
+        +transfer(from_account_id, to_account_id, amount)
+    }
+
+    Bank "1" -- "*" Account : manages
+```
