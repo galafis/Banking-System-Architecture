@@ -1,5 +1,7 @@
 # Banking System Architecture
 
+![Banking System Hero Image](docs/hero_banking_system.png)
+
 [Português](README_pt.md) | [English](README_en.md)
 
 ---

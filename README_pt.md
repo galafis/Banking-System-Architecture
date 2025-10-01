@@ -1,5 +1,7 @@
 # Arquitetura de Sistema Bancário
 
+![Imagem Hero do Sistema Bancário](docs/hero_banking_system.png)
+
 ![Status do Build](https://img.shields.io/badge/build-passing-brightgreen)
 ![Licença](https://img.shields.io/badge/license-MIT-blue)
 ![Linguagem Principal](https://img.shields.io/github/languages/top/galafis/Banking-System-Architecture?color=blue)
@@ -113,7 +115,7 @@ docker-compose up --build
 ## Roadmap Futuro
 
 *   Implementação de um módulo de empréstimos e financiamentos.
-*   Adição de funcionalidades de investimento e gestão de portfólio.
+*   Adição de funcionalidades de investimento e portfólio.
 *   Melhorias na interface do usuário e experiência do cliente.
 *   Expansão para serviços de Open Banking e integração com APIs de terceiros.
 *   Otimização de desempenho e escalabilidade para lidar com alto volume de transações.

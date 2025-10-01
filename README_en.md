@@ -1,5 +1,7 @@
 # Banking System Architecture
 
+![Banking System Hero Image](docs/hero_banking_system.png)
+
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Top Language](https://img.shields.io/github/languages/top/galafis/Banking-System-Architecture?color=blue)
@@ -69,7 +71,7 @@ Ensure you have the following tools installed in your environment:
 3.  Install frontend dependencies (if a `package.json` exists):
     ```bash
     cd frontend
-    npm install # ou yarn install
+    npm install # or yarn install
     cd ..
     ```
 
