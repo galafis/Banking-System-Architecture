@@ -1,6 +1,8 @@
 # Banking System Architecture
 
-![Banking System Hero Image](docs/hero_banking_system.png)
+![Banking System Hero Image](docs/hero_banking_system_new.png)
+
+## 🖼️ Hero Image
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)

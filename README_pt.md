@@ -1,6 +1,8 @@
 # Arquitetura de Sistema Bancário
 
-![Imagem Hero do Sistema Bancário](docs/hero_banking_system.png)
+![Imagem Hero do Sistema Bancário](docs/hero_banking_system_new.png)
+
+## 🖼️ Imagem Hero
 
 ![Status do Build](https://img.shields.io/badge/build-passing-brightgreen)
 ![Licença](https://img.shields.io/badge/license-MIT-blue)
