@@ -1,55 +1,5 @@
-import uuid
-
-class Account:
-    def __init__(self, account_holder, initial_balance=0.0):
-        self.account_id = str(uuid.uuid4())
-        self.account_holder = account_holder
-        self.balance = initial_balance
-
-    def deposit(self, amount):
-        if amount > 0:
-            self.balance += amount
-            return True
-        return False
-
-    def withdraw(self, amount):
-        if 0 < amount <= self.balance:
-            self.balance -= amount
-            return True
-        return False
-
-    def get_balance(self):
-        return self.balance
-
-    def __str__(self):
-        return f"Account ID: {self.account_id}\nHolder: {self.account_holder}\nBalance: ${self.balance:.2f}"
-
-class Bank:
-    def __init__(self):
-        self.accounts = {}
-
-    def create_account(self, account_holder, initial_balance=0.0):
-        account = Account(account_holder, initial_balance)
-        self.accounts[account.account_id] = account
-        # print(f"Account created for {account_holder} with ID {account.account_id}") # Remove print for testing
-        return account
-
-    def get_account(self, account_id):
-        return self.accounts.get(account_id)
-
-    def transfer(self, from_account_id, to_account_id, amount):
-        from_account = self.get_account(from_account_id)
-        to_account = self.get_account(to_account_id)
-
-        if not from_account or not to_account:
-            # print("One or both accounts not found.") # Remove print for testing
-            return False
-        if from_account.withdraw(amount):
-            to_account.deposit(amount)
-            # print(f"Transferred ${amount:.2f} from {from_account.account_holder} to {to_account.account_holder}") # Remove print for testing
-            return True
-        # print("Transfer failed: Insufficient funds or invalid amount.") # Remove print for testing
-        return False
+from src.accounts.account import Account
+from src.transactions.bank import Bank
 
 def main():
     bank = Bank()

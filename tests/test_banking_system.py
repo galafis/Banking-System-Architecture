@@ -1,5 +1,6 @@
 import unittest
-from src.main import Account, Bank
+from src.accounts.account import Account
+from src.transactions.bank import Bank
 
 class TestAccount(unittest.TestCase):
     def setUp(self):
