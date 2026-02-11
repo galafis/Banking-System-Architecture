@@ -4,11 +4,9 @@
 
 ## 🖼️ Hero Image / Imagem Hero
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Top Language](https://img.shields.io/github/languages/top/galafis/Banking-System-Architecture?color=blue)
 ![Python Version](https://img.shields.io/badge/python-3.x-blue)
-![Stars](https://img.shields.io/github/stars/galafis/Banking-System-Architecture?style=social)
 
 ## Overview / Visão Geral
 
