@@ -5,7 +5,13 @@
 
 [English](#english) | [Português](#português)
 
+<<<<<<< HEAD
 ---
+=======
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Top Language](https://img.shields.io/github/languages/top/galafis/Banking-System-Architecture?color=blue)
+![Python Version](https://img.shields.io/badge/python-3.x-blue)
+>>>>>>> 1e77462ef70e7846556d7bb706c6e74afe34922d
 
 ## English
 
