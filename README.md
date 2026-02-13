@@ -1,160 +1,108 @@
-# 🏦 Banking System Architecture
+# Banking-System-Architecture
 
-> Professional repository showcasing advanced development skills
-
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB.svg)](https://img.shields.io/badge/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://img.shields.io/badge/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-[English](#english) | [Português](#português)
+[Portugues](#portugues) | [English](#english)
 
 ---
 
-## English
+## Portugues
 
-### 🎯 Overview
+### Descricao
 
-**Banking System Architecture** is a production-grade Python application complemented by HTML, SQL that showcases modern software engineering practices including clean architecture, comprehensive testing, containerized deployment, and CI/CD readiness.
+Sistema bancario simples em Python demonstrando arquitetura orientada a objetos com classes Account e Bank, operacoes de deposito/saque/transferencia e testes unitarios.
 
-The codebase comprises **237 lines** of source code organized across **8 modules**, following industry best practices for maintainability, scalability, and code quality.
+Este projeto contem 2 classes e aproximadamente 88 linhas de codigo-fonte Python. Utiliza apenas a biblioteca padrao do Python (stdlib), sem dependencias externas.
 
-### ✨ Key Features
+### O que este projeto faz
 
-- **🐳 Containerized**: Docker support for consistent deployment
-- **🏗️ Object-Oriented**: 4 core classes with clean architecture
-- **📐 Clean Architecture**: Modular design with clear separation of concerns
-- **🧪 Test Coverage**: Unit and integration tests for reliability
-- **📚 Documentation**: Comprehensive inline documentation and examples
-- **🔧 Configuration**: Environment-based configuration management
+- Criacao de contas bancarias com saldo inicial
+- Operacoes de deposito e saque com validacao
+- Transferencias entre contas
+- Rastreamento de saldo
+- Representacao textual de contas
 
-### 🏗️ Architecture
+### O que este projeto NAO tem
 
-```mermaid
-graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
-    end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
-    end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
-```
+- Persistencia ou banco de dados (armazenamento em memoria apenas)
+- API web
+- Autenticacao
+- Suporte a Docker
+- CI/CD
+- Gerenciamento de configuracao
+- Microsservicos
+
+### Arquitetura
 
 ```mermaid
 classDiagram
-    class Bank
-    class Account
+    class Bank {
+        +dict accounts
+        +create_account(account_holder, initial_balance) Account
+        +get_account(account_id) Account
+        +transfer(from_id, to_id, amount) bool
+    }
+    class Account {
+        +str account_id
+        +str account_holder
+        +float balance
+        +deposit(amount) bool
+        +withdraw(amount) bool
+        +get_balance() float
+    }
+    Bank --> Account : cria e gerencia
 ```
 
-### 🚀 Quick Start
-
-#### Prerequisites
-
-- Python 3.12+
-- pip (Python package manager)
-
-#### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/galafis/Banking-System-Architecture.git
-cd Banking-System-Architecture
-
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-#### Running
-
-```bash
-# Run the application
-python src/main.py
-```
-
-### 🧪 Testing
-
-```bash
-# Run all tests
-pytest
-
-# Run with coverage report
-pytest --cov --cov-report=html
-
-# Run specific test module
-pytest tests/test_main.py -v
-
-# Run with detailed output
-pytest -v --tb=short
-```
-
-### 📁 Project Structure
+### Estrutura do Projeto
 
 ```
 Banking-System-Architecture/
-├── config/        # Configuration
-│   └── requirements.txt
-├── database/
-│   └── schema.sql
-├── docs/          # Documentation
-│   └── architecture_diagram.md
-├── src/          # Source code
+├── src/
+│   ├── __init__.py
+│   ├── main.py               # Ponto de entrada (demo CLI)
 │   ├── accounts/
 │   │   ├── __init__.py
-│   │   └── account.py
-│   ├── transactions/
-│   │   ├── __init__.py
-│   │   └── bank.py
-│   └── main.py
-├── tests/         # Test suite
-│   └── test_banking_system.py
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── Dockerfile
+│   │   └── account.py        # Classe Account
+│   └── transactions/
+│       ├── __init__.py
+│       └── bank.py            # Classe Bank
+├── tests/
+│   └── test_banking_system.py # 9 testes unitarios
+├── database/
+│   └── schema.sql             # Esquema SQL de referencia (nao utilizado pelo codigo)
+├── requirements.txt
 ├── LICENSE
-├── README.md
-└── SECURITY.md
+└── README.md
 ```
 
-### 🛠️ Tech Stack
+### Como Executar
 
-| Technology | Description | Role |
-|------------|-------------|------|
-| **Python** | Core Language | Primary |
-| **Docker** | Containerization platform | Framework |
-| HTML | 1 files | Supporting |
-| SQL | 1 files | Supporting |
+```bash
+git clone https://github.com/galafis/Banking-System-Architecture.git
+cd Banking-System-Architecture
+python -m src.main
+```
 
-### 🤝 Contributing
+### Testes
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+9 testes unitarios cobrindo deposito, saque, saldo, representacao textual, criacao de conta, consulta de conta, transferencia com sucesso, transferencia com saldo insuficiente e transferencia com conta invalida.
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+```bash
+python -m pytest tests/ -v
+```
 
-### 📄 License
+### Tecnologias
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Python (apenas biblioteca padrao)
+- pytest (dependencia de desenvolvimento)
 
-### 👤 Author
+### Observacoes
+
+O arquivo `database/schema.sql` existe como referencia para um futuro design de banco de dados, mas nao e utilizado pelo codigo atual. Todo armazenamento e feito em memoria usando um dicionario Python.
+
+### Licenca
+
+Este projeto esta licenciado sob a Licenca MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+### Autor
 
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
@@ -162,139 +110,105 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## Português
+## English
 
-### 🎯 Visão Geral
+### Description
 
-**Banking System Architecture** é uma aplicação Python de nível profissional, complementada por HTML, SQL que demonstra práticas modernas de engenharia de software, incluindo arquitetura limpa, testes abrangentes, implantação containerizada e prontidão para CI/CD.
+Simple banking system in Python demonstrating object-oriented architecture with Account and Bank classes, deposit/withdraw/transfer operations, and unit tests.
 
-A base de código compreende **237 linhas** de código-fonte organizadas em **8 módulos**, seguindo as melhores práticas do setor para manutenibilidade, escalabilidade e qualidade de código.
+This project contains 2 classes and approximately 88 lines of Python source code. It uses only the Python standard library (stdlib), with no external dependencies.
 
-### ✨ Funcionalidades Principais
+### What this project does
 
-- **🐳 Containerized**: Docker support for consistent deployment
-- **🏗️ Object-Oriented**: 4 core classes with clean architecture
-- **📐 Clean Architecture**: Modular design with clear separation of concerns
-- **🧪 Test Coverage**: Unit and integration tests for reliability
-- **📚 Documentation**: Comprehensive inline documentation and examples
-- **🔧 Configuration**: Environment-based configuration management
+- Bank account creation with initial balance
+- Deposit and withdrawal operations with validation
+- Transfers between accounts
+- Balance tracking
+- String representation of accounts
 
-### 🏗️ Arquitetura
+### What this project does NOT have
+
+- Persistence or database (in-memory storage only)
+- Web API
+- Authentication
+- Docker support
+- CI/CD
+- Configuration management
+- Microservices
+
+### Architecture
 
 ```mermaid
-graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
-    end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
-    end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
+classDiagram
+    class Bank {
+        +dict accounts
+        +create_account(account_holder, initial_balance) Account
+        +get_account(account_id) Account
+        +transfer(from_id, to_id, amount) bool
+    }
+    class Account {
+        +str account_id
+        +str account_holder
+        +float balance
+        +deposit(amount) bool
+        +withdraw(amount) bool
+        +get_balance() float
+    }
+    Bank --> Account : creates and manages
 ```
 
-### 🚀 Início Rápido
-
-#### Prerequisites
-
-- Python 3.12+
-- pip (Python package manager)
-
-#### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/galafis/Banking-System-Architecture.git
-cd Banking-System-Architecture
-
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-#### Running
-
-```bash
-# Run the application
-python src/main.py
-```
-
-### 🧪 Testing
-
-```bash
-# Run all tests
-pytest
-
-# Run with coverage report
-pytest --cov --cov-report=html
-
-# Run specific test module
-pytest tests/test_main.py -v
-
-# Run with detailed output
-pytest -v --tb=short
-```
-
-### 📁 Estrutura do Projeto
+### Project Structure
 
 ```
 Banking-System-Architecture/
-├── config/        # Configuration
-│   └── requirements.txt
-├── database/
-│   └── schema.sql
-├── docs/          # Documentation
-│   └── architecture_diagram.md
-├── src/          # Source code
+├── src/
+│   ├── __init__.py
+│   ├── main.py               # Entry point (CLI demo)
 │   ├── accounts/
 │   │   ├── __init__.py
-│   │   └── account.py
-│   ├── transactions/
-│   │   ├── __init__.py
-│   │   └── bank.py
-│   └── main.py
-├── tests/         # Test suite
-│   └── test_banking_system.py
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── Dockerfile
+│   │   └── account.py        # Account class
+│   └── transactions/
+│       ├── __init__.py
+│       └── bank.py            # Bank class
+├── tests/
+│   └── test_banking_system.py # 9 unit tests
+├── database/
+│   └── schema.sql             # Reference SQL schema (not used by code)
+├── requirements.txt
 ├── LICENSE
-├── README.md
-└── SECURITY.md
+└── README.md
 ```
 
-### 🛠️ Stack Tecnológica
+### How to Run
 
-| Tecnologia | Descrição | Papel |
-|------------|-----------|-------|
-| **Python** | Core Language | Primary |
-| **Docker** | Containerization platform | Framework |
-| HTML | 1 files | Supporting |
-| SQL | 1 files | Supporting |
+```bash
+git clone https://github.com/galafis/Banking-System-Architecture.git
+cd Banking-System-Architecture
+python -m src.main
+```
 
-### 🤝 Contribuindo
+### Tests
 
-Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
+9 unit tests covering deposit, withdrawal, balance, string representation, account creation, account lookup, successful transfer, insufficient funds transfer, and invalid account transfer.
 
-### 📄 Licença
+```bash
+python -m pytest tests/ -v
+```
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+### Technologies
 
-### 👤 Autor
+- Python (standard library only)
+- pytest (dev dependency)
+
+### Notes
+
+The `database/schema.sql` file exists as a reference for a future database design but is not used by the current code. All storage is done in-memory using a Python dictionary.
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Author
 
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
