@@ -16,6 +16,6 @@ CREATE TABLE IF NOT EXISTS transactions (
 
 -- Insert some sample data
 INSERT INTO accounts (id, account_holder, balance) VALUES
-(\'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\', \'Alice Smith\', 1000.00),
-(\'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12\', \'Bob Johnson\', 500.00);
+('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 'Alice Smith', 1000.00),
+('b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12', 'Bob Johnson', 500.00);
 

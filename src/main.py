@@ -1,4 +1,3 @@
-from src.accounts.account import Account
 from src.transactions.bank import Bank
 
 def main():

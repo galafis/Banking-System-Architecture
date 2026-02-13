@@ -1,2 +1,0 @@
-# Adicione aqui as dependências do projeto
-
